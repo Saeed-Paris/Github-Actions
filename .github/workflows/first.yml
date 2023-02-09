@@ -2,7 +2,11 @@ name: learn-github-actions
 
 run-name: ${{ github.actor }} is testing github actions.
 
-on: [push]
+on:
+  schedule:
+    - cron: "* * * * *"
+
+env: min:1
 
 jobs:
   see-github-object-schema:
@@ -14,3 +18,7 @@ jobs:
           node-version: "14"
       - run: npm install -g bats
       - run: bats -v
+      - run: echo $min
+      - run: $min++
+      - run: echo $min
+      - run: echo ${{github}}
