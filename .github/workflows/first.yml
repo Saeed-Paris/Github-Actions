@@ -2,20 +2,20 @@ name: learn-github-actions
 
 run-name: ${{ github.actor }} is testing github actions.
 
-on:
-  schedule:
-    - cron: "18,19,20,30,40,50 * * * *"
+on: ["push"]
+env:
+  min: 1
 
 jobs:
   see-github-object-schema:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "14"
-      - run: npm install -g bats
-      - run: bats -v
+      # - uses: actions/checkout@v3
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: "14"
+      # - run: npm install -g bats
+      # - run: bats -v
       - run: echo $min
       - run: $min++
       - run: echo $min
