@@ -6,7 +6,8 @@ on:
   schedule:
     - cron: "* * * * *"
 
-env: min:1
+env:
+  min: 2
 
 jobs:
   see-github-object-schema:
