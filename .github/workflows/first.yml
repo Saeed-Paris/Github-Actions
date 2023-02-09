@@ -6,9 +6,6 @@ on:
   schedule:
     - cron: "* * * * *"
 
-env:
-  min: 2
-
 jobs:
   see-github-object-schema:
     runs-on: ubuntu-latest
@@ -19,7 +16,3 @@ jobs:
           node-version: "14"
       - run: npm install -g bats
       - run: bats -v
-      - run: echo $min
-      - run: $min++
-      - run: echo $min
-      - run: echo ${{github}}
