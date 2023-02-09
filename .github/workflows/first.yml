@@ -4,7 +4,8 @@ run-name: ${{ github.actor }} is testing github actions.
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "18 * * * *"
+    - cron: "20 * * * *"
 
 jobs:
   see-github-object-schema:
